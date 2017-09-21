@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using WebsiteGetter.Catch;
 using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace WebsiteGetter.Output
 {
@@ -116,7 +117,7 @@ namespace WebsiteGetter.Output
             return 0;
         }
 
-        private void saveTxt(string filename, string content, bool openOld = true)
+        public void saveTxt(string filename, string content, bool openOld = true)
         {
             //string tmpname = "";
             //string[] tmpstr = res.Substring(0, res.Length > 30 ? 30 : res.Length).Replace("\\", "").Replace(" ", "").Replace(".", "").Replace("\r", "").Split('\n');
@@ -180,11 +181,19 @@ namespace WebsiteGetter.Output
             }
         }
 
-        private void savePdf(string filename,string content)
+        public  void savePdf(string filename,string content)
         {
             string filepath = string.Format("{0}\\{1}.pdf", savePath, filename);
             //WebConnection.saveFile(content, sessionidName + "=" + sessionidValue, filepath);
         }
+
+        public void saveJpg(string filename, Image img)
+        {
+            string filepath = string.Format("{0}\\{1}.jpg", savePath, filename);
+            img.Save(filepath);
+            //WebConnection.saveFile(content, sessionidName + "=" + sessionidValue, filepath);
+        }
+
 
         ///// <summary>
         ///// 保存文字信息
@@ -195,7 +204,7 @@ namespace WebsiteGetter.Output
         //    string name = "";
         //    if (saveState == 0)
         //    {
-                
+
         //    }
         //    else if (saveState == 1)
         //    {

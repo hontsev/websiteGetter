@@ -144,10 +144,10 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.配置);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(659, 322);
+            this.tabPage1.Size = new System.Drawing.Size(659, 319);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "爬取配置";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(67, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "第一部分";
             // 
@@ -180,14 +180,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(66, 16);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(345, 21);
+            this.textBox2.Size = new System.Drawing.Size(345, 25);
             this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(66, 44);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(345, 21);
+            this.textBox3.Size = new System.Drawing.Size(345, 25);
             this.textBox3.TabIndex = 2;
             // 
             // label3
@@ -195,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 19;
             this.label3.Text = "第三部分";
             // 
@@ -203,7 +203,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(66, 71);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(345, 21);
+            this.textBox7.Size = new System.Drawing.Size(345, 25);
             this.textBox7.TabIndex = 18;
             // 
             // label2
@@ -211,7 +211,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "变化部分";
             // 
@@ -255,7 +255,7 @@
             "gbk"});
             this.comboBox1.Location = new System.Drawing.Point(6, 47);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(117, 20);
+            this.comboBox1.Size = new System.Drawing.Size(117, 23);
             this.comboBox1.TabIndex = 24;
             // 
             // label4
@@ -263,7 +263,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 80);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 23;
             this.label4.Text = "线程数";
             // 
@@ -281,7 +281,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(72, 21);
+            this.numericUpDown1.Size = new System.Drawing.Size(72, 25);
             this.numericUpDown1.TabIndex = 22;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -295,10 +295,12 @@
             this.comboBox2.Items.AddRange(new object[] {
             "不固定位数",
             "固定位数",
-            "带下划线"});
+            "BUAA学号",
+            "带下划线",
+            "UCAS学号"});
             this.comboBox2.Location = new System.Drawing.Point(6, 21);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(117, 20);
+            this.comboBox2.Size = new System.Drawing.Size(117, 23);
             this.comboBox2.TabIndex = 12;
             // 
             // tabPage2
@@ -306,10 +308,10 @@
             this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(659, 322);
+            this.tabPage2.Size = new System.Drawing.Size(659, 319);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "分析配置";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -329,7 +331,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(17, 32);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(84, 16);
+            this.checkBox2.Size = new System.Drawing.Size(106, 19);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "不小于50kb";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -353,11 +355,11 @@
             this.regex,
             this.name});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 21);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(506, 289);
+            this.dataGridView1.Size = new System.Drawing.Size(506, 285);
             this.dataGridView1.TabIndex = 33;
             // 
             // sourcename
@@ -390,9 +392,9 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(18, 64);
+            this.checkBox6.Location = new System.Drawing.Point(18, 87);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(48, 16);
+            this.checkBox6.Size = new System.Drawing.Size(59, 19);
             this.checkBox6.TabIndex = 2;
             this.checkBox6.Text = "文件";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -402,7 +404,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.Location = new System.Drawing.Point(18, 42);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(48, 16);
+            this.checkBox5.Size = new System.Drawing.Size(59, 19);
             this.checkBox5.TabIndex = 1;
             this.checkBox5.Text = "图片";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -412,7 +414,7 @@
             this.checkBox4.AutoSize = true;
             this.checkBox4.Location = new System.Drawing.Point(18, 20);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(48, 16);
+            this.checkBox4.Size = new System.Drawing.Size(59, 19);
             this.checkBox4.TabIndex = 0;
             this.checkBox4.Text = "文字";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -424,9 +426,9 @@
             this.tabPage3.Controls.Add(this.button7);
             this.tabPage3.Controls.Add(this.textBox5);
             this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(659, 322);
+            this.tabPage3.Size = new System.Drawing.Size(659, 319);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "存储配置";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -466,7 +468,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(195, 257);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 21);
+            this.textBox5.Size = new System.Drawing.Size(223, 25);
             this.textBox5.TabIndex = 39;
             // 
             // groupBox3
@@ -488,7 +490,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(16, 77);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(162, 16);
+            this.checkBox1.Size = new System.Drawing.Size(203, 19);
             this.checkBox1.TabIndex = 19;
             this.checkBox1.Text = "文本内容存入单个txt文件";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -517,7 +519,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(16, 20);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 21);
+            this.textBox4.Size = new System.Drawing.Size(335, 25);
             this.textBox4.TabIndex = 11;
             this.textBox4.Text = "tmp\\";
             // 
@@ -558,6 +560,7 @@
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -620,7 +623,7 @@
             this.textBox1.Location = new System.Drawing.Point(190, 65);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(70, 14);
+            this.textBox1.Size = new System.Drawing.Size(70, 18);
             this.textBox1.TabIndex = 37;
             this.textBox1.Text = "0";
             // 
@@ -629,7 +632,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(129, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 12);
+            this.label7.Size = new System.Drawing.Size(82, 15);
             this.label7.TabIndex = 36;
             this.label7.Text = "当前进度：";
             // 
@@ -638,7 +641,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(61, 65);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.Size = new System.Drawing.Size(37, 15);
             this.label6.TabIndex = 35;
             this.label6.Text = "停止";
             // 
@@ -647,7 +650,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 65);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.Size = new System.Drawing.Size(82, 15);
             this.label5.TabIndex = 34;
             this.label5.Text = "当前状态：";
             // 
@@ -664,21 +667,22 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.清空ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 28);
             // 
             // 清空ToolStripMenuItem
             // 
             this.清空ToolStripMenuItem.Name = "清空ToolStripMenuItem";
-            this.清空ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.清空ToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.清空ToolStripMenuItem.Text = "清空";
             this.清空ToolStripMenuItem.Click += new System.EventHandler(this.清空ToolStripMenuItem_Click);
             // 
             // WSForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(943, 380);

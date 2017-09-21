@@ -32,7 +32,7 @@ namespace WebsiteGetter.Catch
         /// </summary>
         /// <param name="nowid"></param>
         /// <returns></returns>
-        public static string nextId(string nowid)
+        public static string nextBUAA(string nowid)
         {
             string next = "";
             int temp = Int32.Parse(nowid);
@@ -59,6 +59,27 @@ namespace WebsiteGetter.Catch
                 temp++;
             }
             next = temp.ToString();
+            return next;
+        }
+
+        public static string nextUCAS(string nowid)
+        {
+            string next = "";
+            if (nowid.Length < 15) return nowid;
+
+            int year = int.Parse(nowid.Substring(0, 4));
+            int type = int.Parse(nowid.Substring(4, 1));
+            int org = int.Parse(nowid.Substring(5, 5));
+            int major = int.Parse(nowid.Substring(10, 2));
+            int num = int.Parse(nowid.Substring(12, 3));
+
+            if ( num <= 98) num++;
+            else if (major <= 98) { major++;num = 1; }
+            else if (org <= 80198) { org++; major = 1;num = 1; }
+            else if (type <= 3) { type++;org = 80001;major = 1;num = 1; }
+            else { year++;type = 1;org = 80001;major = 1;num = 1; }
+
+            next = year.ToString() + type.ToString() + org.ToString() + major.ToString().PadLeft(2,'0') + num.ToString().PadLeft(3,'0');
             return next;
         }
     }

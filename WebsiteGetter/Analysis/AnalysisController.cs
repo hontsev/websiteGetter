@@ -7,8 +7,12 @@ using System.Text.RegularExpressions;
 
 namespace WebsiteGetter.Analysis
 {
+
+
     class AnalysisController
     {
+
+
         public bool isWord;
         public bool isImage;
         public bool isFile;

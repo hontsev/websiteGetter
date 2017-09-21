@@ -150,6 +150,7 @@ namespace WebsiteGetter
             ac.isWord = checkBox4.Checked;
             ac.isImage = checkBox5.Checked;
             ac.isFile = checkBox6.Checked;
+            cc.isFile = ac.isFile;
             oc.isSaveOneTxt = checkBox1.Checked;
             oc.isNotSmallImage = checkBox2.Checked;
             oc.savePath = textBox4.Text;
@@ -309,17 +310,29 @@ namespace WebsiteGetter
 
         private void testwork()
         {
-            string html = cc.catchHtml();
-            ac.analysis(cc.getNowUrl(), html, cc.url1);
-            print("分析结果：");
-            print(ac.title);
-            foreach (var a in ac.content)
+
+            CatchResult res = cc.catchHtml();
+            html = res.text;
+            if (ac.isFile && res.img!=null)
             {
-                string outputstr = "";
-                foreach(var v in a.Value)outputstr+=v+"\r\n";
-                print(string.Format("【【【{0}】】】:\r\n\r\n\r\n\r\n{1}\r\n\r\n\r\n\r\n", a.Key, outputstr));
+                oc.saveJpg("test", res.img);
             }
-            if (ac.strList.Count > 0) print(ac.strList[0].ToString());
+            else
+            {
+                ac.analysis(cc.getNowUrl(), html, cc.url1);
+                print("分析结果：");
+                print(ac.title);
+                foreach (var a in ac.content)
+                {
+                    string outputstr = "";
+                    foreach (var v in a.Value) outputstr += v + "\r\n";
+                    print(string.Format("【【【{0}】】】:\r\n\r\n\r\n\r\n{1}\r\n\r\n\r\n\r\n", a.Key, outputstr));
+                }
+                if (ac.strList.Count > 0) print(ac.strList[0].ToString());
+            }
+
+            
+
         }
 
         private void dealAnalysisResult(Dictionary<string,List<string>> res)
@@ -368,16 +381,41 @@ namespace WebsiteGetter
             do
             {
                 updateNo(cc.nowNum.ToString());
-                string html = cc.catchHtml();
-                ac.analysis(cc.getNowUrl(), html, cc.url1);
+                CatchResult res = cc.catchHtml();
+                html = res.text;
 
-                //处理正则匹配结果
-                dealAnalysisResult(ac.content);
-                //if (ac.content.Count > 1 && !string.IsNullOrWhiteSpace(ac.content.ElementAt(1).Value)) oc.output(ac.title, oc.formatOutputText(ac.content), OutputType.txt);
-                
-                //处理图片链接
-                if (ac.strList.Count > 0) print(ac.strList[0].ToString());
-                cc.saveImg(ac.strList, oc.savePath, ac.title + "_" + cc.nowNum.ToString());
+                if (ac.isFile && res.img != null )
+                {
+                    //save jpg
+                    
+                    //cc.getNext();
+                    //cc.nowNum++;
+                    string filename = cc.nowStr;
+                    if (res.img.Height == 210 && res.img.Width == 150)
+                    {
+                        print(filename + "(null)");
+                    }
+                    else
+                    {
+                        oc.saveJpg(filename, res.img);
+                        print("output:" + filename);
+                    }
+
+                }
+                else
+                {
+                    ac.analysis(cc.getNowUrl(), html, cc.url1);
+
+                    //处理正则匹配结果
+                    dealAnalysisResult(ac.content);
+                    //if (ac.content.Count > 1 && !string.IsNullOrWhiteSpace(ac.content.ElementAt(1).Value)) oc.output(ac.title, oc.formatOutputText(ac.content), OutputType.txt);
+
+                    //处理图片链接
+                    if (ac.strList.Count > 0) print(ac.strList[0].ToString());
+                    cc.saveImg(ac.strList, oc.savePath, ac.title + "_" + cc.nowNum.ToString());
+
+
+                }
 
                 if (cc.nowNum == cc.maxNum)
                 {

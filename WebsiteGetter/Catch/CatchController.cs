@@ -7,10 +7,27 @@ using WebsiteGetter.Catch;
 using System.Web;
 using System.Net;
 using System.IO;
-
+using System.Drawing;
 
 namespace WebsiteGetter.Catch
 {
+    public class CatchResult
+    {
+        public Image img;
+        public string text;
+
+        public CatchResult()
+        {
+            img = null;
+            text = "";
+
+        }
+        public CatchResult(Image img=null,string text = "")
+        {
+            this.img = img;
+            this.text = text;
+        }
+    }
     class CatchController
     {
         public int maxNum;
@@ -25,6 +42,9 @@ namespace WebsiteGetter.Catch
 
         //public bool useCookies;
         public string cookies;
+
+        public bool isFile;
+
 
 
         public CatchController()
@@ -57,7 +77,7 @@ namespace WebsiteGetter.Catch
         /// 获取下一个要扫描的号码
         /// </summary>
         /// <returns></returns>
-        private void getNext()
+        public void getNext()
         {
             if (nowNum == 0)
             {
@@ -71,7 +91,7 @@ namespace WebsiteGetter.Catch
                 switch (addState)
                 {
                     case AddState.num_buaaSid:
-                        nowStr= NumberGetter.nextId(beforeStr);
+                        nowStr= NumberGetter.nextBUAA(beforeStr);
                         break;
                     case AddState.num_staticLength:
                         //添0的自增
@@ -95,6 +115,9 @@ namespace WebsiteGetter.Catch
                         }
                         nowStr = num1 + "_" + num2;
                         break;
+                    case AddState.num_ucasSid:
+                        nowStr = NumberGetter.nextUCAS(beforeStr);
+                        break;
                     default:
                         break;
                 }
@@ -102,26 +125,36 @@ namespace WebsiteGetter.Catch
         }
 
 
-        public string catchHtml()
+        public CatchResult catchHtml()
         {
             getNext();
             if (nowNum != maxNum)
             {
                 string html = "";
-                if (string.IsNullOrEmpty(this.cookies))
+                if (isFile)
                 {
-                    html = WebConnection.getData(getNowUrl(),getEncoding());
+                    Image img = WebConnection.getJPGWithCookie(getNowUrl(), cookies);
+                    nowNum += 1;
+                    return new CatchResult(img);
                 }
                 else
                 {
-                    html = WebConnection.getDataWithCookie(getNowUrl(), cookies, getEncoding());
+                    if (string.IsNullOrEmpty(this.cookies))
+                    {
+                        html = WebConnection.getData(getNowUrl(), getEncoding());
+                    }
+                    else
+                    {
+                        html = WebConnection.getDataWithCookie(getNowUrl(), cookies, getEncoding());
+                    }
+                    nowNum += 1;
+                    return new CatchResult(null,html);
                 }
-                nowNum += 1;
-                return html;
+
             }
             else
             {
-                return "";
+                return new CatchResult();
             }
         }
 

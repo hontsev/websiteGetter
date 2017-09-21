@@ -76,6 +76,50 @@ namespace WebsiteGetter
 
         }
 
+
+        /// <summary>
+        /// 通过GET image
+        /// </summary>
+        /// <param name="Url">url</param>
+        /// <param name="postDataStr">GET数据</param>
+        /// <param name="cookie">GET容器</param>
+        /// <returns></returns>
+        public static Image getJPGWithCookie(string url, string cookieStr)
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            //if (cookie.Count == 0)
+            //{
+            //    request.CookieContainer = new CookieContainer();
+            //    cookie = request.CookieContainer;
+            //}
+            //else
+            //{
+            //    request.CookieContainer = cookie;
+            //}
+
+            request.Method = "GET";
+            request.Headers.Add("Cookie", cookieStr);
+            request.ContentType = "image/JPEG;";
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                Stream myResponseStream = response.GetResponseStream();
+
+                Image img = Image.FromStream(myResponseStream);
+
+
+                myResponseStream.Close();
+                return img;
+            }
+            catch (Exception)
+            {
+                return null;
+
+            }
+
+
+        }
+
         /// <summary>
         /// 检查ssh验证结果是否接受的函数
         /// </summary>
