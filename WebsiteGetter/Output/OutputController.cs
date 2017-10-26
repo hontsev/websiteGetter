@@ -190,6 +190,7 @@ namespace WebsiteGetter.Output
         public void saveJpg(string filename, Image img)
         {
             string filepath = string.Format("{0}\\{1}.jpg", savePath, filename);
+            if (File.Exists(filename)) File.Delete(filename);
             img.Save(filepath);
             //WebConnection.saveFile(content, sessionidName + "=" + sessionidValue, filepath);
         }

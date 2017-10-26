@@ -143,6 +143,7 @@ namespace WebsiteGetter
         {
             cc.encoding = (EncodingState)comboBox1.SelectedIndex;
             cc.addState = (AddState)comboBox2.SelectedIndex;
+            cc.setNumberList(textBox9.Text);
             //.threadNum = Convert.ToInt32(numericUpDown1.Value);
             cc.url1 = textBox2.Text;
             cc.url2 = textBox3.Text;
@@ -391,15 +392,8 @@ namespace WebsiteGetter
                     //cc.getNext();
                     //cc.nowNum++;
                     string filename = cc.nowStr;
-                    if (res.img.Height == 210 && res.img.Width == 150)
-                    {
-                        print(filename + "(null)");
-                    }
-                    else
-                    {
-                        oc.saveJpg(filename, res.img);
-                        print("output:" + filename);
-                    }
+                    oc.saveJpg(filename, res.img);
+                    print("output:" + filename);
 
                 }
                 else

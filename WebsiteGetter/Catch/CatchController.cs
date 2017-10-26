@@ -36,6 +36,9 @@ namespace WebsiteGetter.Catch
         public AddState addState;
         public EncodingState encoding;
 
+        public string[] numbers;
+        private int numberIndex;
+
         public string url1;
         public string url2;
         public string url3;
@@ -44,6 +47,38 @@ namespace WebsiteGetter.Catch
         public string cookies;
 
         public bool isFile;
+
+        
+        public void setNumberList(string numstr)
+        {
+            var tmp = numstr.Replace(" ", "").Replace('\r', '\n').Split('\n') ;
+            var res = new List<string>();
+            foreach(var v in tmp)
+            {
+                if (!string.IsNullOrWhiteSpace(v))
+                {
+                    res.Add(v);
+                }
+            }
+            this.numberIndex = -1;
+            this.numbers = res.ToArray();
+            
+        }
+
+        private string getNextInList()
+        {
+            
+            numberIndex++;
+            if (numberIndex < numbers.Length)
+            {
+                return numbers[numberIndex];
+            }
+            else
+            {
+                return numbers[numbers.Length - 1];
+            }
+           
+        }
 
 
 
@@ -117,6 +152,10 @@ namespace WebsiteGetter.Catch
                         break;
                     case AddState.num_ucasSid:
                         nowStr = NumberGetter.nextUCAS(beforeStr);
+                        break;
+                    case AddState.num_custom:
+                        // 采用自定义序号清单
+                        nowStr = getNextInList();
                         break;
                     default:
                         break;

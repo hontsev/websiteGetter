@@ -84,6 +84,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.清空ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -107,6 +109,7 @@
             this.splitContainer2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -141,6 +144,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.配置);
@@ -220,17 +224,22 @@
             this.groupBox2.Controls.Add(this.textBox8);
             this.groupBox2.Location = new System.Drawing.Point(206, 111);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(429, 137);
+            this.groupBox2.Size = new System.Drawing.Size(429, 202);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cookies";
             // 
             // textBox8
             // 
+            this.textBox8.AcceptsReturn = true;
+            this.textBox8.AcceptsTab = true;
+            this.textBox8.AllowDrop = true;
             this.textBox8.Location = new System.Drawing.Point(9, 20);
+            this.textBox8.MaxLength = 999999;
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(402, 111);
+            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox8.Size = new System.Drawing.Size(402, 176);
             this.textBox8.TabIndex = 32;
             this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
@@ -297,7 +306,8 @@
             "固定位数",
             "BUAA学号",
             "带下划线",
-            "UCAS学号"});
+            "UCAS学号",
+            "使用列表数据"});
             this.comboBox2.Location = new System.Drawing.Point(6, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(117, 23);
@@ -680,6 +690,29 @@
             this.清空ToolStripMenuItem.Text = "清空";
             this.清空ToolStripMenuItem.Click += new System.EventHandler(this.清空ToolStripMenuItem_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Location = new System.Drawing.Point(6, 117);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(188, 196);
+            this.groupBox6.TabIndex = 35;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "变化列表";
+            // 
+            // textBox9
+            // 
+            this.textBox9.AcceptsReturn = true;
+            this.textBox9.AcceptsTab = true;
+            this.textBox9.AllowDrop = true;
+            this.textBox9.Location = new System.Drawing.Point(9, 20);
+            this.textBox9.MaxLength = 999999;
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox9.Size = new System.Drawing.Size(173, 170);
+            this.textBox9.TabIndex = 32;
+            // 
             // WSForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -725,6 +758,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -785,5 +820,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 清空ToolStripMenuItem;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
