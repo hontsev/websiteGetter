@@ -121,6 +121,7 @@ namespace WebsiteGetter
         {
             comboBox1.SelectedIndex = (int)cc.encoding;
             comboBox2.SelectedIndex = (int)cc.addState;
+            comboBox3.SelectedIndex = (int)cc.conntype;
             //numericUpDown1.Value = config.threadNum;
             textBox2.Text = cc.url1;
             textBox3.Text = cc.url2;
@@ -143,6 +144,7 @@ namespace WebsiteGetter
         {
             cc.encoding = (EncodingState)comboBox1.SelectedIndex;
             cc.addState = (AddState)comboBox2.SelectedIndex;
+            cc.conntype = (ConnectType)comboBox3.SelectedIndex;
             cc.setNumberList(textBox9.Text);
             //.threadNum = Convert.ToInt32(numericUpDown1.Value);
             cc.url1 = textBox2.Text;

@@ -34,6 +34,8 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -84,14 +86,14 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.清空ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.配置.SuspendLayout();
@@ -109,7 +111,6 @@
             this.splitContainer2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -155,6 +156,29 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "爬取配置";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox9);
+            this.groupBox6.Location = new System.Drawing.Point(6, 117);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(188, 196);
+            this.groupBox6.TabIndex = 35;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "变化列表";
+            // 
+            // textBox9
+            // 
+            this.textBox9.AcceptsReturn = true;
+            this.textBox9.AcceptsTab = true;
+            this.textBox9.AllowDrop = true;
+            this.textBox9.Location = new System.Drawing.Point(9, 20);
+            this.textBox9.MaxLength = 999999;
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox9.Size = new System.Drawing.Size(173, 170);
+            this.textBox9.TabIndex = 32;
             // 
             // groupBox1
             // 
@@ -245,6 +269,7 @@
             // 
             // 配置
             // 
+            this.配置.Controls.Add(this.comboBox3);
             this.配置.Controls.Add(this.comboBox1);
             this.配置.Controls.Add(this.label4);
             this.配置.Controls.Add(this.numericUpDown1);
@@ -264,7 +289,7 @@
             "gbk"});
             this.comboBox1.Location = new System.Drawing.Point(6, 47);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(117, 23);
+            this.comboBox1.Size = new System.Drawing.Size(73, 23);
             this.comboBox1.TabIndex = 24;
             // 
             // label4
@@ -690,28 +715,16 @@
             this.清空ToolStripMenuItem.Text = "清空";
             this.清空ToolStripMenuItem.Click += new System.EventHandler(this.清空ToolStripMenuItem_Click);
             // 
-            // groupBox6
+            // comboBox3
             // 
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Location = new System.Drawing.Point(6, 117);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(188, 196);
-            this.groupBox6.TabIndex = 35;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "变化列表";
-            // 
-            // textBox9
-            // 
-            this.textBox9.AcceptsReturn = true;
-            this.textBox9.AcceptsTab = true;
-            this.textBox9.AllowDrop = true;
-            this.textBox9.Location = new System.Drawing.Point(9, 20);
-            this.textBox9.MaxLength = 999999;
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox9.Size = new System.Drawing.Size(173, 170);
-            this.textBox9.TabIndex = 32;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "GET",
+            "POST"});
+            this.comboBox3.Location = new System.Drawing.Point(85, 47);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(73, 23);
+            this.comboBox3.TabIndex = 25;
             // 
             // WSForm
             // 
@@ -731,6 +744,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -758,8 +773,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -822,5 +835,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

@@ -101,6 +101,7 @@
     <Compile Include="Analysis\RegexGroup.cs" />
     <Compile Include="Analysis\RegexItem.cs" />
     <Compile Include="Analysis\TextAnalysis.cs" />
+    <Compile Include="Catch\ConnectType.cs" />
     <Compile Include="Catch\EncodingState.cs" />
     <Compile Include="Catch\CatchController.cs" />
     <Compile Include="Catch\AddState.cs" />

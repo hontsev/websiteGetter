@@ -35,6 +35,7 @@ namespace WebsiteGetter.Catch
         public string nowStr;
         public AddState addState;
         public EncodingState encoding;
+        public ConnectType conntype;
 
         public string[] numbers;
         private int numberIndex;
@@ -106,6 +107,24 @@ namespace WebsiteGetter.Catch
         {
             string url = url1 + nowStr + url3;
             return url;
+        }
+
+        public string getNowParams()
+        {
+            string full = getNowUrl();
+            string param = "";
+            try
+            {
+                int begin = full.IndexOf('?');
+                if (begin > 0)
+                {
+                    param = full.Substring(begin + 1);
+                }
+            }
+            catch
+            {
+            }
+            return param;
         }
 
         /// <summary>
@@ -184,7 +203,15 @@ namespace WebsiteGetter.Catch
                     }
                     else
                     {
-                        html = WebConnection.getDataWithCookie(getNowUrl(), cookies, getEncoding());
+                        if (conntype == ConnectType.GET)
+                        {
+                            html = WebConnection.getDataWithCookie(getNowUrl(), "",cookies, getEncoding(), false);
+                        }
+                        else if (conntype == ConnectType.POST)
+                        {
+                            html = WebConnection.getDataWithCookie(getNowUrl(), getNowParams(), cookies, getEncoding(), true);
+                        }
+                        
                     }
                     nowNum += 1;
                     return new CatchResult(null,html);

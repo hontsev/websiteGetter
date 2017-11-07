@@ -129,7 +129,7 @@ namespace WebsiteGetter.Output
 
             //name = savePath + noStr + "_" + title + ".txt";
 
-            string filepath = string.Format("{0}\\{1}.txt", savePath, filename);
+            string filepath = string.Format("{0}{1}.txt", savePath, filename);
             try
             {
                 FileStream s;

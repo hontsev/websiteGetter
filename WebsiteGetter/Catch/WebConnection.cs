@@ -34,13 +34,14 @@ namespace WebsiteGetter
         }
 
         /// <summary>
-        /// 通过GET方式发送数据
+        /// 发送数据
         /// </summary>
         /// <param name="Url">url</param>
         /// <param name="postDataStr">GET数据</param>
         /// <param name="cookie">GET容器</param>
+        /// <param name="ispost">是否是POST方式</param>
         /// <returns></returns>
-        public static string getDataWithCookie(string url, string cookieStr,Encoding charset)
+        public static string getDataWithCookie(string url, string param,string cookieStr,Encoding charset,bool ispost)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             //if (cookie.Count == 0)
@@ -52,10 +53,21 @@ namespace WebsiteGetter
             //{
             //    request.CookieContainer = cookie;
             //}
-
-            request.Method = "GET";
+            if (ispost) request.Method = "POST";
+            else request.Method = "GET";
             request.ContentType = "text/html;charset=UTF-8";
             request.Headers.Add("Cookie", cookieStr);
+
+            if (ispost == true && param.Length > 0)
+            {
+                request.ContentType = "application/x-www-form-urlencoded";
+                byte[] data = charset.GetBytes(param);
+                using (Stream stream = request.GetRequestStream())
+                {
+                    stream.Write(data, 0, data.Length);
+                }
+            }
+
             //request.ContentType = "image/JPEG;";
             try
             {
